@@ -26,24 +26,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ad3-kf-riO">
+            <objects>
+                <navigationController storyboardIdentifier="ToppingsNVC" id="h1H-VH-hue" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ICn-FR-Eky">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PQ9-aQ-c1G" kind="relationship" relationship="rootViewController" id="26a-Bs-F9e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O53-nY-cpq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3713" y="-644"/>
+        </scene>
         <!--Toppings View Controller-->
         <scene sceneID="6XI-Ip-hQC">
             <objects>
                 <tableViewController id="PQ9-aQ-c1G" customClass="ToppingsViewController" customModule="BYOPizza" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="28" sectionFooterHeight="28" id="E5C-pX-Msf">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="53" sectionHeaderHeight="28" sectionFooterHeight="28" id="E5C-pX-Msf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToppingCell" textLabel="Kvf-PP-jb7" rowHeight="53" style="IBUITableViewCellStyleDefault" id="X2x-cR-tat">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ToppingCell" textLabel="Kvf-PP-jb7" rowHeight="53" style="IBUITableViewCellStyleDefault" id="X2x-cR-tat">
                                 <rect key="frame" x="0.0" y="28" width="375" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X2x-cR-tat" id="HiA-ME-jCm">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="336" height="52"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kvf-PP-jb7">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="52"/>
+                                            <rect key="frame" x="15" y="0.0" width="321" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -58,10 +74,22 @@
                             <outlet property="delegate" destination="PQ9-aQ-c1G" id="mhz-WV-6K4"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="eic-ZZ-eIX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RiN-Dj-3db">
+                            <connections>
+                                <action selector="onCancel:" destination="PQ9-aQ-c1G" id="e3P-nS-T2Q"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Cfm-2h-anE">
+                            <connections>
+                                <action selector="onDone:" destination="PQ9-aQ-c1G" id="eTx-nz-Nfe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djU-DQ-4bz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="949.60000000000002" y="100.29985007496252"/>
+            <point key="canvasLocation" x="4546" y="-643"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vqE-Hc-YR1">
@@ -189,6 +217,11 @@
                         <barButtonItem key="leftBarButtonItem" image="settings" id="qcq-8u-4c9">
                             <connections>
                                 <segue destination="Aci-Mw-gkE" kind="show" id="buU-Gv-M8M"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Build Your Own" id="Mgg-1o-zOr" userLabel="Build Your Own">
+                            <connections>
+                                <segue destination="6T8-Xp-joy" kind="show" id="nz9-Jj-cFe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -325,4 +358,7 @@
     <resources>
         <image name="settings" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yGw-w7-4YV"/>
+    </inferredMetricsTieBreakers>
 </document>

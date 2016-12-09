@@ -125,12 +125,16 @@ class ConfigurationsViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if let vc = segue.destination as? OrderViewController,
-            let cell = sender as? UITableViewCell,
-            let indexPath = tableView.indexPath(for: cell)
-            
+        if let vc = segue.destination as? OrderViewController
         {
-            vc.toppings = self.items[indexPath.row].toppings
+            if let cell = sender as? UITableViewCell,
+                let indexPath = tableView.indexPath(for: cell) {
+                vc.toppings = self.items[indexPath.row].toppings
+            }else if let _ = sender as? UIBarButtonItem {
+                vc.toppings = "" //build your own.
+            }
+            
+            
         }
     }
 

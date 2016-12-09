@@ -8,7 +8,9 @@
 
 import UIKit
 
-class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,
+ToppingsViewControllerDelegate
+{
 
     var items: [String] = []
     
@@ -21,11 +23,29 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        items = toppings.components(separatedBy: ",")
-        
         tableView.tableFooterView = UIView(frame: .zero)
         
+        items = toppings.components(separatedBy: ",").filter({ (item) -> Bool in
+            item.characters.count > 0
+        })
+        
+
+        
         tableView.reloadData()
+        
+        if items.count == 0 {
+            
+            let nvc = storyboard?.instantiateViewController(withIdentifier: "ToppingsNVC") as! UINavigationController
+            
+            guard let vc = nvc.viewControllers.first as? ToppingsViewController  else {fatalError()}
+            
+            vc.delegate = self
+            
+            self.navigationController?.present(nvc, animated: true, completion: {
+                
+            })
+            
+        }
         
         
     }
@@ -100,7 +120,25 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
+    // MARK: - ToppingsViewControllerDelegate
     
+    func onCancel() {
 
+        self.navigationController?.dismiss(animated: true, completion: {
+            
+        })
+        
+        _ = self.navigationController?.popViewController(animated: true)
+        
+    }
+
+    func onDone(toppings: [String]) {
+        items = toppings
+        tableView.reloadData()
+        
+        self.navigationController?.dismiss(animated: true, completion: { 
+            
+        })
+    }
 
 }

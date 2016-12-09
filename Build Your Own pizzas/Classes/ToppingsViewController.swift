@@ -8,9 +8,18 @@
 
 import UIKit
 
+protocol ToppingsViewControllerDelegate {
+    
+    func onCancel()
+    
+    func onDone(toppings: [String])
+    
+}
 
 class ToppingsViewController: UITableViewController {
 
+    
+    var delegate:ToppingsViewControllerDelegate? 
     
     var items: [Topping] = []
     
@@ -53,11 +62,24 @@ class ToppingsViewController: UITableViewController {
         let item = items[indexPath.row]
         
         cell.textLabel?.text = item.name
+        
+        var isCellSelected = false
+        if let selectedIndexPaths = self.tableView.indexPathsForSelectedRows {
+            isCellSelected = selectedIndexPaths.contains(indexPath)
+        }
+        cell.accessoryType  =  isCellSelected ?  .checkmark : .none
 
         return cell
     }
    
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType  =  .checkmark
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType  =  .none
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -98,5 +120,33 @@ class ToppingsViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
    
+    @IBAction func onCancel(_ sender: Any) {
+        if let delegate = delegate {
+         
+            delegate.onCancel()
+        }
+    }
+    
+    @IBAction func onDone(_ sender: Any) {
+        
+        if let delegate = delegate {
+            
+            if let selectedIndexPathes = tableView.indexPathsForSelectedRows {
+                var results = [String]()
+                
+                for indexPath in selectedIndexPathes {
+                    results.append(self.items[indexPath.row].name!)
+                }
+                
+                
+                
+                delegate.onDone(toppings: results)
+                
+                
+                    
+            }
+        }
+    }
+    
 
 }
