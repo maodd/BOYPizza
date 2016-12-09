@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="OrderHistory" representedClassName="OrderHistory" syncable="YES" codeGenerationType="class">
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="configuration" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PizzaConfiguration" syncable="YES"/>
         <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
@@ -22,7 +23,7 @@
         <relationship name="topping" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Topping" syncable="YES"/>
     </entity>
     <elements>
-        <element name="OrderHistory" positionX="-36" positionY="18" width="128" height="104"/>
+        <element name="OrderHistory" positionX="-36" positionY="18" width="128" height="119"/>
         <element name="PizzaConfiguration" positionX="-54" positionY="0" width="128" height="120"/>
         <element name="Topping" positionX="-63" positionY="-18" width="128" height="60"/>
         <element name="ToppingConfRef" positionX="-18" positionY="54" width="128" height="75"/>

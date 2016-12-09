@@ -46,12 +46,6 @@ class Repository {
             //I like to check the size of the returned results!
             print ("num of Toppings = \(searchResults.count)")
             
-            //You need to convert to NSManagedObject to use 'for' loops
-//            for topping in searchResults as [Topping]  {
-//                //get the Key Value pairs (although there may be a better way to do that...
-//                print("\(topping.name ?? "no name")")
-//            }
-            
             return searchResults
             
         } catch {
@@ -106,22 +100,50 @@ class Repository {
         return []
     }
     
+    func findConigurationByToppings(toppings: [String]) -> PizzaConfiguration? {
+        
+        let fetchRequest: NSFetchRequest<PizzaConfiguration> = PizzaConfiguration.fetchRequest()
+        
+        fetchRequest.predicate = NSPredicate(format: "toppings == %@", makeConfigurationNameFrom(toppings: toppings))
+        
+        
+        fetchRequest.fetchLimit = 1
+        
+        do {
+            //go get the results
+            let searchResults = try getContext().fetch(fetchRequest)
+            
+            
+            //I like to check the size of the returned results!
+            print ("num of matched PizzaConfiguration = \(searchResults.count)")
+            
+       
+            return searchResults.first
+            
+        } catch {
+            print("Error with request: \(error)")
+        }
+        
+        return nil
+    }
+    
     func makeConfigurationNameFrom(toppings: [String]) -> String {
         return toppings.sorted{$0.lowercased() < $1.lowercased()}.joined(separator: ",").lowercased()
     }
     
-    func saveNewConfiguration(toppings: String, countOfOrders: Int = 0,  _ dupCheck: Bool = true) {
+    func saveNewConfiguration(toppings: String, countOfOrders: Int = 0,  _ dupCheck: Bool = true) -> PizzaConfiguration {
         
         let refinedToppings = makeConfigurationNameFrom(toppings: toppings.components(separatedBy: ",")).lowercased()
         
         if dupCheck {
-            if getAllConfigurations().filter({ (cfg) -> Bool in
+            let matches = getAllConfigurations().filter({ (cfg) -> Bool in
                 
                 return cfg.toppings?.lowercased() == refinedToppings
                 
-            }).count > 0 {
+            })
+            if matches.count > 0 {
                 print("\(toppings) configuration exists, skipping save.")
-                return
+                return matches.first!
             }
         }
         
@@ -131,28 +153,37 @@ class Repository {
         newConfiguration.toppings = toppings
         newConfiguration.countOfOrders = Int16(countOfOrders)
         
+        return newConfiguration
  
     }
     
     // MARK: Order
-//    func saveNewOrder(toppings: [String]) {
-//        
-//        if getAllToppings().filter({ (topping) -> Bool in
-//            
-//            return topping.name?.uppercased() == name.uppercased()
-//            
-//        }).count > 0 {
-//            print("\(name) topping exists, skipping save.")
-//            return
-//        }
-//        
-//        let entity = NSEntityDescription.entity(forEntityName: "Topping", in: getContext())
-//        let newTopping = NSManagedObject(entity: entity!, insertInto: getContext()) as! Topping
-//        newTopping.name = name
-//        
-//        //save the object
-//        saveContext()
-//    }
+    func saveNewOrder(toppings: [String], _ count: Int16 = 1) {
+        
+        let toppingsName = makeConfigurationNameFrom(toppings: toppings)
+        
+
+        var configuration:PizzaConfiguration? = nil
+        
+        if let existingCfg = findConigurationByToppings(toppings: toppings) {
+            configuration = existingCfg
+        }else{
+            print("new cfg, save new cfg first")
+            
+            configuration = saveNewConfiguration(toppings: toppingsName)
+        }
+        
+        guard let cfgInDb = configuration else {fatalError()}
+        
+        cfgInDb.countOfOrders += count
+        
+        let entity = NSEntityDescription.entity(forEntityName: "OrderHistory", in: getContext())
+        let item = NSManagedObject(entity: entity!, insertInto: getContext()) as! OrderHistory
+        item.configuration = cfgInDb
+        item.time = Date() as NSDate?
+        item.count = count
+ 
+    }
     
     
     // MARK: - Core Data stack

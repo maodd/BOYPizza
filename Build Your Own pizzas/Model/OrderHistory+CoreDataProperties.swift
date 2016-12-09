@@ -18,6 +18,7 @@ extension OrderHistory {
     }
 
     @NSManaged public var time: NSDate?
+    @NSManaged public var count: Int16?
     @NSManaged public var configuration: PizzaConfiguration?
 
 }

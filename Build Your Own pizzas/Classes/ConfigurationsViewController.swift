@@ -22,7 +22,7 @@ class ConfigurationsViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        items = Repository.sharedInstance.getAllConfigurations()
+
         
     }
 
@@ -31,6 +31,14 @@ class ConfigurationsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        items = Repository.sharedInstance.getAllConfigurations()
+        
+        self.tableView.reloadData()
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -94,14 +102,18 @@ class ConfigurationsViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if let vc = segue.destination as? OrderViewController,
+            let cell = sender as? UITableViewCell,
+            let indexPath = tableView.indexPath(for: cell)
+            
+        {
+            vc.toppings = self.items[indexPath.row].toppings
+        }
     }
-    */
+
 
 }

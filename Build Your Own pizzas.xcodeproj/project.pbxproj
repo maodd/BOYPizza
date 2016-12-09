@@ -10,6 +10,7 @@
 		694FD47C1DFB162400034BCD /* Build_Your_Own_pizzas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 694FD47A1DFB162400034BCD /* Build_Your_Own_pizzas.xcdatamodeld */; };
 		694FD4801DFB16B500034BCD /* ToppingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FD47F1DFB16B500034BCD /* ToppingsViewController.swift */; };
 		694FD4821DFB291D00034BCD /* ConfigurationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FD4811DFB291D00034BCD /* ConfigurationsViewController.swift */; };
+		694FD4841DFB2EAF00034BCD /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FD4831DFB2EAF00034BCD /* OrderViewController.swift */; };
 		696E36871DFB01C90098390C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E36861DFB01C90098390C /* AppDelegate.swift */; };
 		696E36891DFB01C90098390C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E36881DFB01C90098390C /* ViewController.swift */; };
 		696E368C1DFB01C90098390C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 696E368A1DFB01C90098390C /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		694FD47B1DFB162400034BCD /* Build_Your_Own_pizzas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Build_Your_Own_pizzas.xcdatamodel; sourceTree = "<group>"; };
 		694FD47F1DFB16B500034BCD /* ToppingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToppingsViewController.swift; sourceTree = "<group>"; };
 		694FD4811DFB291D00034BCD /* ConfigurationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationsViewController.swift; sourceTree = "<group>"; };
+		694FD4831DFB2EAF00034BCD /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		696E36831DFB01C90098390C /* BYOPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BYOPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		696E36861DFB01C90098390C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		696E36881DFB01C90098390C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				696E36FF1DFB0AEE0098390C /* Repository.swift */,
 				694FD47F1DFB16B500034BCD /* ToppingsViewController.swift */,
 				694FD4811DFB291D00034BCD /* ConfigurationsViewController.swift */,
+				694FD4831DFB2EAF00034BCD /* OrderViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				696E36891DFB01C90098390C /* ViewController.swift in Sources */,
 				694FD4801DFB16B500034BCD /* ToppingsViewController.swift in Sources */,
 				696E36871DFB01C90098390C /* AppDelegate.swift in Sources */,
+				694FD4841DFB2EAF00034BCD /* OrderViewController.swift in Sources */,
 				694FD4821DFB291D00034BCD /* ConfigurationsViewController.swift in Sources */,
 				696E37001DFB0AEE0098390C /* Repository.swift in Sources */,
 				694FD47C1DFB162400034BCD /* Build_Your_Own_pizzas.xcdatamodeld in Sources */,
