@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="3713" y="-644"/>
         </scene>
-        <!--Toppings View Controller-->
+        <!--Toppings-->
         <scene sceneID="6XI-Ip-hQC">
             <objects>
                 <tableViewController id="PQ9-aQ-c1G" customClass="ToppingsViewController" customModule="BYOPizza" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,7 +74,7 @@
                             <outlet property="delegate" destination="PQ9-aQ-c1G" id="mhz-WV-6K4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="eic-ZZ-eIX">
+                    <navigationItem key="navigationItem" title="Toppings" id="eic-ZZ-eIX">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RiN-Dj-3db">
                             <connections>
                                 <action selector="onCancel:" destination="PQ9-aQ-c1G" id="e3P-nS-T2Q"/>
@@ -245,10 +245,10 @@
             </objects>
             <point key="canvasLocation" x="1775.2" y="100.29985007496252"/>
         </scene>
-        <!--Order View Controller-->
+        <!--Order-->
         <scene sceneID="kCY-91-9uJ">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="6T8-Xp-joy" customClass="OrderViewController" customModule="BYOPizza" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Order" automaticallyAdjustsScrollViewInsets="NO" id="6T8-Xp-joy" customClass="OrderViewController" customModule="BYOPizza" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gSj-dm-yS3"/>
                         <viewControllerLayoutGuide type="bottom" id="rtP-LR-K5v"/>
@@ -258,7 +258,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bi7-NT-uIS">
-                                <rect key="frame" x="0.0" y="64" width="375" height="453"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="409"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderToppingCell" textLabel="hGJ-UJ-srD" rowHeight="62" style="IBUITableViewCellStyleDefault" id="IqX-6e-SZx">
@@ -285,7 +285,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7df-Cr-Btf">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="573" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.81568627449999997" green="0.41960784309999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="czB-1W-yXh"/>
@@ -299,10 +299,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0Z-qj-Emo">
-                                <rect key="frame" x="95" y="557" width="185" height="60"/>
+                                <rect key="frame" x="95" y="513" width="185" height="60"/>
                                 <subviews>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Y00-7d-owO">
-                                        <rect key="frame" x="66" y="15" width="94" height="29"/>
+                                        <rect key="frame" x="66" y="16" width="94" height="29"/>
                                         <color key="tintColor" red="0.81568627449999997" green="0.41960784309999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="onNumberChanged:" destination="6T8-Xp-joy" eventType="touchUpInside" id="7Or-QM-pd0"/>
@@ -345,6 +345,9 @@
                             <constraint firstItem="rtP-LR-K5v" firstAttribute="top" secondItem="7df-Cr-Btf" secondAttribute="bottom" id="tKq-mn-aMH"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Order" id="DTv-1R-J45"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="itemNumberLabel" destination="gAK-HR-c7X" id="bph-X5-pSg"/>
                         <outlet property="tableView" destination="Bi7-NT-uIS" id="eCj-5r-S7L"/>

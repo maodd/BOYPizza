@@ -21,6 +21,7 @@
 		696E37081DFB135C0098390C /* BYOPizzaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E37071DFB135C0098390C /* BYOPizzaTests.swift */; };
 		696E37101DFB13900098390C /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E370F1DFB13900098390C /* RepositoryTests.swift */; };
 		69D885911DFB4557004A3E85 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D885901DFB4557004A3E85 /* SettingsViewController.swift */; };
+		69D885941DFB5BAF004A3E85 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D885931DFB5BAF004A3E85 /* UIColor.swift */; };
 		E98088D39A99BB2848C9EA40 /* Pods_Build_Your_Own_pizzas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F52473570D3C08C8B569B0C /* Pods_Build_Your_Own_pizzas.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		696E37091DFB135C0098390C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		696E370F1DFB13900098390C /* RepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		69D885901DFB4557004A3E85 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		69D885931DFB5BAF004A3E85 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		8C34B9C78ED1CBAD12B119C1 /* Pods-Build Your Own pizzas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Build Your Own pizzas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Build Your Own pizzas/Pods-Build Your Own pizzas.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 			children = (
 				696E36881DFB01C90098390C /* ViewController.swift */,
 				696E36951DFB01C90098390C /* Info.plist */,
+				69D885921DFB5BA5004A3E85 /* Extensions */,
 				696E36FE1DFB0AD10098390C /* Classes */,
 				696E36A91DFB05340098390C /* Resources */,
 			);
@@ -158,6 +161,14 @@
 				696E37091DFB135C0098390C /* Info.plist */,
 			);
 			path = BYOPizzaTests;
+			sourceTree = "<group>";
+		};
+		69D885921DFB5BA5004A3E85 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				69D885931DFB5BAF004A3E85 /* UIColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +330,7 @@
 				694FD4801DFB16B500034BCD /* ToppingsViewController.swift in Sources */,
 				696E36871DFB01C90098390C /* AppDelegate.swift in Sources */,
 				694FD4841DFB2EAF00034BCD /* OrderViewController.swift in Sources */,
+				69D885941DFB5BAF004A3E85 /* UIColor.swift in Sources */,
 				694FD4821DFB291D00034BCD /* ConfigurationsViewController.swift in Sources */,
 				696E37001DFB0AEE0098390C /* Repository.swift in Sources */,
 				694FD47C1DFB162400034BCD /* Build_Your_Own_pizzas.xcdatamodeld in Sources */,

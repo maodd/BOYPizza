@@ -18,6 +18,26 @@ ToppingsViewControllerDelegate
     
     @IBOutlet weak var tableView: UITableView!
     
+    var configuration:PizzaConfiguration?
+    
+    var favoriteButton:UIButton!
+    
+    var _isFavorite:Bool = false
+    var isFavorite:Bool {
+        set(value) {
+            _isFavorite = value
+            
+            let imageNamge = _isFavorite ? "heart" : "heart-line"
+            favoriteButton.setBackgroundImage(UIImage(named: imageNamge), for: .normal)
+            
+            self.configuration?.isFavorite = _isFavorite
+        }
+        
+        get{
+            return _isFavorite
+        }
+    }
+    
     @IBOutlet weak var itemNumberLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +49,13 @@ ToppingsViewControllerDelegate
             item.characters.count > 0
         })
         
-
+        
+        self.layoutFavoriteButton()
+        
+        
+        self.configuration =  Repository.sharedInstance.findConigurationByToppings(toppings: items)
+        
+        self.isFavorite = (self.configuration?.isFavorite)!
         
         tableView.reloadData()
         
@@ -49,6 +75,20 @@ ToppingsViewControllerDelegate
         
         
     }
+    
+    func layoutFavoriteButton() {
+        favoriteButton = UIButton(type: .custom)
+        
+        favoriteButton.tintColor = UIColor.customOrange()
+        favoriteButton.bounds = CGRect(x: 0, y: 0, width: 22, height: 22)
+        
+        favoriteButton.addTarget(self,
+                                 action: #selector(OrderViewController.onFavoriteOrUnfavorite(_:)),
+                                 for: .touchUpInside)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: favoriteButton)
+    }
+    
     @IBAction func onNumberChanged(_ sender: UIStepper) {
         
         itemNumberLabel.text = String(format:"%.0f", sender.value)
@@ -141,4 +181,11 @@ ToppingsViewControllerDelegate
         })
     }
 
+    
+    @IBAction func onFavoriteOrUnfavorite(_ sender: UIButton) {
+        
+        self.isFavorite = !self.isFavorite
+        
+    }
+    
 }
