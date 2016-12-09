@@ -23,16 +23,16 @@ class RepositoryTests: XCTestCase {
     
     func testParseSampleData() {
      
-        let toppings = Repository.sharedInstance.parseSampleData()
+        let orders = Repository.sharedInstance.parseSampleData()
         
-        XCTAssertEqual(36, toppings.count)
+        XCTAssertEqual(12761, orders.count)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testMakeConfigurationNameFrom() {
+        
+        let cfgName = Repository.sharedInstance.makeConfigurationNameFrom(toppings: ["a","C","b"])
+        
+        XCTAssertEqual("a,b,c", cfgName)
     }
     
 }

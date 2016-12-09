@@ -17,8 +17,10 @@ extension PizzaConfiguration {
         return NSFetchRequest<PizzaConfiguration>(entityName: "PizzaConfiguration");
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var isCustomerMade: Bool
     @NSManaged public var isFavorite: Bool
+    @NSManaged public var name: String?
+    @NSManaged public var toppings: String?
+    @NSManaged public var countOfOrders: Int16
 
 }

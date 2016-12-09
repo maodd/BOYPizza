@@ -15,23 +15,24 @@ class Repository {
     
     static let sharedInstance = Repository()
     
-    func saveNewToppingIfNotExists(name: String) {
-        
-        if getAllToppings().filter({ (topping) -> Bool in
-            
-            return topping.name?.uppercased() == name.uppercased()
-            
-        }).count > 0 {
-            print("\(name) topping exists, skipping save.")
-            return
+    
+    func saveNewTopping(name: String, _ dupCheck: Bool = true) {
+        if dupCheck {
+            if getAllToppings().filter({ (topping) -> Bool in
+                
+                return topping.name?.uppercased() == name.uppercased()
+                
+            }).count > 0 {
+                print("\(name) topping exists, skipping save.")
+                return
+            }
         }
     
         let entity = NSEntityDescription.entity(forEntityName: "Topping", in: getContext())
         let newTopping = NSManagedObject(entity: entity!, insertInto: getContext()) as! Topping
         newTopping.name = name
         
-        //save the object
-        saveContext()
+ 
     }
     
     func getAllToppings () -> [Topping] {
@@ -43,12 +44,57 @@ class Repository {
             let searchResults = try getContext().fetch(fetchRequest)
             
             //I like to check the size of the returned results!
-            print ("num of results = \(searchResults.count)")
+            print ("num of Toppings = \(searchResults.count)")
             
             //You need to convert to NSManagedObject to use 'for' loops
-            for topping in searchResults as [Topping]  {
+//            for topping in searchResults as [Topping]  {
+//                //get the Key Value pairs (although there may be a better way to do that...
+//                print("\(topping.name ?? "no name")")
+//            }
+            
+            return searchResults
+            
+        } catch {
+            print("Error with request: \(error)")
+        }
+        
+        return []
+    }
+    // MARK: Configuration
+    enum ConfigurationSortType {
+        case countOfOrders
+        case toppings
+    }
+    
+    func getAllConfigurations (sortBy: ConfigurationSortType = .countOfOrders, top: Int = 20) -> [PizzaConfiguration] {
+        //create a fetch request, telling it about the entity
+        let fetchRequest: NSFetchRequest<PizzaConfiguration> = PizzaConfiguration.fetchRequest()
+        
+        switch sortBy {
+        case .countOfOrders:
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "countOfOrders", ascending: false)]
+        case .toppings:
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "toppings", ascending: true)]
+        
+        }
+        
+        
+        fetchRequest.fetchLimit = top
+        
+        do {
+            //go get the results
+            let searchResults = try getContext().fetch(fetchRequest)
+            
+            
+            //I like to check the size of the returned results!
+            print ("num of PizzaConfiguration = \(searchResults.count)")
+            
+            
+            
+            //You need to convert to NSManagedObject to use 'for' loops
+            for configuration in searchResults as [PizzaConfiguration]  {
                 //get the Key Value pairs (although there may be a better way to do that...
-                print("\(topping.name ?? "no name")")
+                print("\(configuration.toppings ?? "no name")")
             }
             
             return searchResults
@@ -59,6 +105,55 @@ class Repository {
         
         return []
     }
+    
+    func makeConfigurationNameFrom(toppings: [String]) -> String {
+        return toppings.sorted{$0.lowercased() < $1.lowercased()}.joined(separator: ",").lowercased()
+    }
+    
+    func saveNewConfiguration(toppings: String, countOfOrders: Int = 0,  _ dupCheck: Bool = true) {
+        
+        let refinedToppings = makeConfigurationNameFrom(toppings: toppings.components(separatedBy: ",")).lowercased()
+        
+        if dupCheck {
+            if getAllConfigurations().filter({ (cfg) -> Bool in
+                
+                return cfg.toppings?.lowercased() == refinedToppings
+                
+            }).count > 0 {
+                print("\(toppings) configuration exists, skipping save.")
+                return
+            }
+        }
+        
+        let entity = NSEntityDescription.entity(forEntityName: "PizzaConfiguration", in: getContext())
+        let newConfiguration = NSManagedObject(entity: entity!, insertInto: getContext()) as! PizzaConfiguration
+      
+        newConfiguration.toppings = toppings
+        newConfiguration.countOfOrders = Int16(countOfOrders)
+        
+ 
+    }
+    
+    // MARK: Order
+//    func saveNewOrder(toppings: [String]) {
+//        
+//        if getAllToppings().filter({ (topping) -> Bool in
+//            
+//            return topping.name?.uppercased() == name.uppercased()
+//            
+//        }).count > 0 {
+//            print("\(name) topping exists, skipping save.")
+//            return
+//        }
+//        
+//        let entity = NSEntityDescription.entity(forEntityName: "Topping", in: getContext())
+//        let newTopping = NSManagedObject(entity: entity!, insertInto: getContext()) as! Topping
+//        newTopping.name = name
+//        
+//        //save the object
+//        saveContext()
+//    }
+    
     
     // MARK: - Core Data stack
     
@@ -110,30 +205,71 @@ class Repository {
     
     // sample data
     
-    func parseSampleData() -> [String] {
+    func parseSampleData() -> [[String]] {
         let jsonFilePath:NSString = Bundle.main.path(forResource: "sampleData", ofType: "json")! as NSString
         guard let jsonData = NSData.dataWithContentsOfMappedFile(jsonFilePath as String) as? NSData else {fatalError("invalid sample data")}
         
         let json = JSON(data: jsonData as Data) // Note: data: parameter name
+
         
-        let toppings = NSMutableSet()
+        var orders = [[String]]()
         
         for item in json.arrayValue {
+            var order = [String]()
             for topping in item["toppings"].arrayValue {
                 
-                toppings.add(topping.stringValue)
+                order.append(topping.stringValue)
 
             }
+            
+            orders.append(order)
         }
         
-        print(toppings)
-        
-        return toppings.allObjects as! [String]
+        return orders
+//
+//        print(toppings)
+//        
+//        return  toppings.allObjects as! [String]
     }
     
     func initializeDb() {
-        for topping in parseSampleData() {
-            saveNewToppingIfNotExists(name: topping)
+        if getAllToppings().count > 0 {
+            print("db already initialized.")
+            return
+        }
+        
+        let toppings = NSMutableSet()
+        let configurations = NSMutableSet()
+        var configuratoinOrderCounts = [String:Int]()
+        
+        for order in parseSampleData()  {
+            
+            for topping in order {
+                
+                toppings.add(topping)
+                
+            }
+            
+            let cfgName = makeConfigurationNameFrom(toppings: order)
+            if configurations.contains(cfgName) {
+                guard let originalCount = configuratoinOrderCounts[cfgName]  else {fatalError()}
+                
+                configuratoinOrderCounts[cfgName] = originalCount + 1
+
+            }else{
+                configurations.add(cfgName)
+                configuratoinOrderCounts[cfgName]  = 1
+            }
+            
+           
+        }
+        
+        for (cfgNameKey, value) in configuratoinOrderCounts {
+            saveNewConfiguration(toppings: cfgNameKey, countOfOrders: value, false)
+        }
+        
+        for topping in toppings {
+            saveNewTopping(name: topping as! String, false)
         }
     }
 }

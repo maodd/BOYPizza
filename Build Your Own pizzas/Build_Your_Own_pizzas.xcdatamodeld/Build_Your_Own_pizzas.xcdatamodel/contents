@@ -8,6 +8,7 @@
         </fetchedProperty>
     </entity>
     <entity name="PizzaConfiguration" representedClassName="PizzaConfiguration" syncable="YES" codeGenerationType="class">
+        <attribute name="countOfOrders" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isCustomerMade" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -21,9 +22,9 @@
         <relationship name="topping" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Topping" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Topping" positionX="-63" positionY="-18" width="128" height="60"/>
-        <element name="PizzaConfiguration" positionX="-54" positionY="0" width="128" height="105"/>
         <element name="OrderHistory" positionX="-36" positionY="18" width="128" height="104"/>
+        <element name="PizzaConfiguration" positionX="-54" positionY="0" width="128" height="120"/>
+        <element name="Topping" positionX="-63" positionY="-18" width="128" height="60"/>
         <element name="ToppingConfRef" positionX="-18" positionY="54" width="128" height="75"/>
     </elements>
 </model>
