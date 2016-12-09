@@ -14,6 +14,8 @@
 		696E36911DFB01C90098390C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 696E36901DFB01C90098390C /* Assets.xcassets */; };
 		696E36941DFB01C90098390C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 696E36921DFB01C90098390C /* LaunchScreen.storyboard */; };
 		696E369F1DFB01C90098390C /* Build_Your_Own_pizzasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E369E1DFB01C90098390C /* Build_Your_Own_pizzasTests.swift */; };
+		696E36AB1DFB053A0098390C /* iOS Take Home Assignment.json in Resources */ = {isa = PBXBuildFile; fileRef = 696E36AA1DFB053A0098390C /* iOS Take Home Assignment.json */; };
+		E98088D39A99BB2848C9EA40 /* Pods_Build_Your_Own_pizzas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F52473570D3C08C8B569B0C /* Pods_Build_Your_Own_pizzas.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		696E36831DFB01C90098390C /* Build Your Own pizzas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Build Your Own pizzas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		441E63AFFCFE38853AE8C92B /* Pods-Build Your Own pizzas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Build Your Own pizzas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Build Your Own pizzas/Pods-Build Your Own pizzas.debug.xcconfig"; sourceTree = "<group>"; };
+		4F52473570D3C08C8B569B0C /* Pods_Build_Your_Own_pizzas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Build_Your_Own_pizzas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		696E36831DFB01C90098390C /* BYOPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BYOPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		696E36861DFB01C90098390C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		696E36881DFB01C90098390C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		696E368B1DFB01C90098390C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,6 +42,8 @@
 		696E369A1DFB01C90098390C /* Build Your Own pizzasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Build Your Own pizzasTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		696E369E1DFB01C90098390C /* Build_Your_Own_pizzasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Build_Your_Own_pizzasTests.swift; sourceTree = "<group>"; };
 		696E36A01DFB01C90098390C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		696E36AA1DFB053A0098390C /* iOS Take Home Assignment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "iOS Take Home Assignment.json"; sourceTree = "<group>"; };
+		8C34B9C78ED1CBAD12B119C1 /* Pods-Build Your Own pizzas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Build Your Own pizzas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Build Your Own pizzas/Pods-Build Your Own pizzas.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E98088D39A99BB2848C9EA40 /* Pods_Build_Your_Own_pizzas.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,19 +65,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A1B291780F4E9F003B07B92 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F52473570D3C08C8B569B0C /* Pods_Build_Your_Own_pizzas.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C4A1BB3687BCBE3A55215F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				441E63AFFCFE38853AE8C92B /* Pods-Build Your Own pizzas.debug.xcconfig */,
+				8C34B9C78ED1CBAD12B119C1 /* Pods-Build Your Own pizzas.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		696E367A1DFB01C90098390C = {
 			isa = PBXGroup;
 			children = (
 				696E36851DFB01C90098390C /* Build Your Own pizzas */,
 				696E369D1DFB01C90098390C /* Build Your Own pizzasTests */,
 				696E36841DFB01C90098390C /* Products */,
+				5C4A1BB3687BCBE3A55215F6 /* Pods */,
+				0A1B291780F4E9F003B07B92 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		696E36841DFB01C90098390C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				696E36831DFB01C90098390C /* Build Your Own pizzas.app */,
+				696E36831DFB01C90098390C /* BYOPizza.app */,
 				696E369A1DFB01C90098390C /* Build Your Own pizzasTests.xctest */,
 			);
 			name = Products;
@@ -86,6 +112,7 @@
 				696E36921DFB01C90098390C /* LaunchScreen.storyboard */,
 				696E36951DFB01C90098390C /* Info.plist */,
 				696E368D1DFB01C90098390C /* Build_Your_Own_pizzas.xcdatamodeld */,
+				696E36A91DFB05340098390C /* Resources */,
 			);
 			path = "Build Your Own pizzas";
 			sourceTree = "<group>";
@@ -99,6 +126,14 @@
 			path = "Build Your Own pizzasTests";
 			sourceTree = "<group>";
 		};
+		696E36A91DFB05340098390C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				696E36AA1DFB053A0098390C /* iOS Take Home Assignment.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +141,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 696E36A31DFB01C90098390C /* Build configuration list for PBXNativeTarget "Build Your Own pizzas" */;
 			buildPhases = (
+				7166DD9AE009BCFBE3A7E377 /* [CP] Check Pods Manifest.lock */,
 				696E367F1DFB01C90098390C /* Sources */,
 				696E36801DFB01C90098390C /* Frameworks */,
 				696E36811DFB01C90098390C /* Resources */,
+				9DEC1C445BFD526BDC9E27FE /* [CP] Embed Pods Frameworks */,
+				205ADF5F573E436E67C7F435 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -116,7 +154,7 @@
 			);
 			name = "Build Your Own pizzas";
 			productName = "Build Your Own pizzas";
-			productReference = 696E36831DFB01C90098390C /* Build Your Own pizzas.app */;
+			productReference = 696E36831DFB01C90098390C /* BYOPizza.app */;
 			productType = "com.apple.product-type.application";
 		};
 		696E36991DFB01C90098390C /* Build Your Own pizzasTests */ = {
@@ -185,6 +223,7 @@
 				696E36941DFB01C90098390C /* LaunchScreen.storyboard in Resources */,
 				696E36911DFB01C90098390C /* Assets.xcassets in Resources */,
 				696E368C1DFB01C90098390C /* Main.storyboard in Resources */,
+				696E36AB1DFB053A0098390C /* iOS Take Home Assignment.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +235,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		205ADF5F573E436E67C7F435 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Build Your Own pizzas/Pods-Build Your Own pizzas-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7166DD9AE009BCFBE3A7E377 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9DEC1C445BFD526BDC9E27FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Build Your Own pizzas/Pods-Build Your Own pizzas-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		696E367F1DFB01C90098390C /* Sources */ = {
@@ -341,24 +428,26 @@
 		};
 		696E36A41DFB01C90098390C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 441E63AFFCFE38853AE8C92B /* Pods-Build Your Own pizzas.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Build Your Own pizzas/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mazoic.Build-Your-Own-pizzas";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BYOPizza;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		696E36A51DFB01C90098390C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C34B9C78ED1CBAD12B119C1 /* Pods-Build Your Own pizzas.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Build Your Own pizzas/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mazoic.Build-Your-Own-pizzas";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BYOPizza;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -410,6 +499,7 @@
 				696E36A51DFB01C90098390C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		696E36A61DFB01C90098390C /* Build configuration list for PBXNativeTarget "Build Your Own pizzasTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +508,7 @@
 				696E36A81DFB01C90098390C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
