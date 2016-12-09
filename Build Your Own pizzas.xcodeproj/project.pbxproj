@@ -20,6 +20,7 @@
 		696E37001DFB0AEE0098390C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E36FF1DFB0AEE0098390C /* Repository.swift */; };
 		696E37081DFB135C0098390C /* BYOPizzaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E37071DFB135C0098390C /* BYOPizzaTests.swift */; };
 		696E37101DFB13900098390C /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E370F1DFB13900098390C /* RepositoryTests.swift */; };
+		69D885911DFB4557004A3E85 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D885901DFB4557004A3E85 /* SettingsViewController.swift */; };
 		E98088D39A99BB2848C9EA40 /* Pods_Build_Your_Own_pizzas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F52473570D3C08C8B569B0C /* Pods_Build_Your_Own_pizzas.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		696E37071DFB135C0098390C /* BYOPizzaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BYOPizzaTests.swift; sourceTree = "<group>"; };
 		696E37091DFB135C0098390C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		696E370F1DFB13900098390C /* RepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
+		69D885901DFB4557004A3E85 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8C34B9C78ED1CBAD12B119C1 /* Pods-Build Your Own pizzas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Build Your Own pizzas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Build Your Own pizzas/Pods-Build Your Own pizzas.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 				694FD47F1DFB16B500034BCD /* ToppingsViewController.swift */,
 				694FD4811DFB291D00034BCD /* ConfigurationsViewController.swift */,
 				694FD4831DFB2EAF00034BCD /* OrderViewController.swift */,
+				69D885901DFB4557004A3E85 /* SettingsViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				694FD4821DFB291D00034BCD /* ConfigurationsViewController.swift in Sources */,
 				696E37001DFB0AEE0098390C /* Repository.swift in Sources */,
 				694FD47C1DFB162400034BCD /* Build_Your_Own_pizzas.xcdatamodeld in Sources */,
+				69D885911DFB4557004A3E85 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

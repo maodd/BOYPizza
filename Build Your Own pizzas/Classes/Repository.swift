@@ -10,6 +10,12 @@ import Foundation
 import CoreData
 import SwiftyJSON
 
+enum ConfigurationSortType {
+    case countOfOrders
+    case toppings
+    case lastOrderTime
+}
+    
 class Repository {
     
     
@@ -55,10 +61,7 @@ class Repository {
         return []
     }
     // MARK: Configuration
-    enum ConfigurationSortType {
-        case countOfOrders
-        case toppings
-    }
+
     
     func getAllConfigurations (sortBy: ConfigurationSortType = .countOfOrders, top: Int = 20) -> [PizzaConfiguration] {
         //create a fetch request, telling it about the entity
@@ -67,9 +70,13 @@ class Repository {
         switch sortBy {
         case .countOfOrders:
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "countOfOrders", ascending: false)]
+            
         case .toppings:
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "toppings", ascending: true)]
-        
+            
+        case .lastOrderTime:
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lastOrderTime", ascending: false)]
+
         }
         
         
@@ -88,7 +95,7 @@ class Repository {
             //You need to convert to NSManagedObject to use 'for' loops
             for configuration in searchResults as [PizzaConfiguration]  {
                 //get the Key Value pairs (although there may be a better way to do that...
-                print("\(configuration.toppings ?? "no name")")
+                print(configuration)
             }
             
             return searchResults
@@ -152,6 +159,7 @@ class Repository {
       
         newConfiguration.toppings = toppings
         newConfiguration.countOfOrders = Int16(countOfOrders)
+        newConfiguration.lastOrderTime = NSDate()
         
         return newConfiguration
  
@@ -176,11 +184,12 @@ class Repository {
         guard let cfgInDb = configuration else {fatalError()}
         
         cfgInDb.countOfOrders += count
+        cfgInDb.lastOrderTime = NSDate()
         
         let entity = NSEntityDescription.entity(forEntityName: "OrderHistory", in: getContext())
         let item = NSManagedObject(entity: entity!, insertInto: getContext()) as! OrderHistory
         item.configuration = cfgInDb
-        item.time = Date() as NSDate?
+        item.time = NSDate()
         item.count = count
  
     }
@@ -296,7 +305,7 @@ class Repository {
         }
         
         for (cfgNameKey, value) in configuratoinOrderCounts {
-            saveNewConfiguration(toppings: cfgNameKey, countOfOrders: value, false)
+            _ = saveNewConfiguration(toppings: cfgNameKey, countOfOrders: value, false)
         }
         
         for topping in toppings {

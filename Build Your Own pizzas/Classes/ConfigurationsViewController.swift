@@ -11,8 +11,10 @@ import UIKit
 class ConfigurationsViewController: UITableViewController {
 
     
+    @IBOutlet var sortTypeSwitcher: UISegmentedControl!
     var items = [PizzaConfiguration]()
     
+    var dateFormatter = DateFormatter()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,9 +23,14 @@ class ConfigurationsViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        tableView.tableFooterView = UIView(frame: .zero)
         
-
+        self.navigationItem.titleView =
+        sortTypeSwitcher
         
+       
+        dateFormatter.timeStyle = .short
+        dateFormatter.dateStyle = .none
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +42,14 @@ class ConfigurationsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        items = Repository.sharedInstance.getAllConfigurations()
+        reloadData()
+    }
+    
+    func reloadData() {
+        let sortByType:ConfigurationSortType = [.countOfOrders, .lastOrderTime][sortTypeSwitcher.selectedSegmentIndex]
+        let count = UserDefaults.standard.integer(forKey: AppConstants.KeyForMaxNumberOfItemsToDisplay)
+        
+        items = Repository.sharedInstance.getAllConfigurations(sortBy: sortByType, top: count)
         
         self.tableView.reloadData()
     }
@@ -62,10 +76,15 @@ class ConfigurationsViewController: UITableViewController {
         cell.textLabel?.text = item.toppings
         cell.textLabel?.numberOfLines = 0
         
-        cell.detailTextLabel?.text = String(item.countOfOrders)
+        if sortTypeSwitcher.selectedSegmentIndex == 0 {
+            cell.detailTextLabel?.text = String(item.countOfOrders)
+        }else{
+            cell.detailTextLabel?.text = "" //dateFormatter.string(from: item.lastOrderTime as? Date ?? Date.distantPast )
+        }
         return cell
     }
   
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -116,4 +135,8 @@ class ConfigurationsViewController: UITableViewController {
     }
 
 
+    @IBAction func onSortListByType(_ sender: UISegmentedControl) {
+        
+        reloadData()
+    }
 }

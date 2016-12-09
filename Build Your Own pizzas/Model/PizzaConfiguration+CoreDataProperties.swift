@@ -22,5 +22,6 @@ extension PizzaConfiguration {
     @NSManaged public var name: String?
     @NSManaged public var toppings: String?
     @NSManaged public var countOfOrders: Int16
+    @NSManaged public var lastOrderTime: NSDate?
 
 }

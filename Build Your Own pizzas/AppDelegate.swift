@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -18,9 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
- 
+        UINavigationBar.appearance().tintColor = UIColor(colorLiteralRed: 208/255.0, green: 107/255.0, blue: 55/255.0, alpha: 1)
         
-       Repository.sharedInstance.initializeDb()
+        Repository.sharedInstance.initializeDb()
+        
+        setDefaultsIfNeeded()
         
         return true
     }
@@ -50,6 +53,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
  
+    // MARK: - Set Defaults
+    func setDefaultsIfNeeded() {
+        let count =  UserDefaults.standard.integer(forKey: AppConstants.KeyForMaxNumberOfItemsToDisplay)
+        
+        if count == 0 {
+            UserDefaults.standard.set(20, forKey: AppConstants.KeyForMaxNumberOfItemsToDisplay)
+            UserDefaults.standard.synchronize()
+        }
+    }
 
 }
 
