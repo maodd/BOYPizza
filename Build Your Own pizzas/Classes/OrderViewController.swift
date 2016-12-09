@@ -12,6 +12,8 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
 ToppingsViewControllerDelegate
 {
 
+    var isCustomerMade = false
+    
     var items: [String] = []
     
     var toppings:String!
@@ -109,7 +111,9 @@ ToppingsViewControllerDelegate
     @IBAction func onPlaceOrder(_ sender: Any) {
         
         let count = Int16(itemNumberLabel.text!)
-        Repository.sharedInstance.saveNewOrder(toppings: self.items, isFavorite: self.isFavorite,  count!)
+        Repository.sharedInstance.saveNewOrder(toppings: self.items,
+                                               isCustomerMade:  self.isCustomerMade,
+                                               isFavorite: self.isFavorite,  count!)
         
         let ac = UIAlertController(title: "Success",
                           message: "Order placed successfully",
@@ -187,6 +191,8 @@ ToppingsViewControllerDelegate
     func onDone(toppings: [String]) {
         items = toppings
         tableView.reloadData()
+        
+        self.isCustomerMade = true
         
         self.navigationController?.dismiss(animated: true, completion: { 
             

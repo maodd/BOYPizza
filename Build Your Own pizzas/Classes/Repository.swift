@@ -63,7 +63,9 @@ class Repository {
     // MARK: Configuration
 
     
-    func getAllConfigurations (sortBy: ConfigurationSortType = .countOfOrders, top: Int = 20) -> [PizzaConfiguration] {
+    func getAllConfigurations (_ sortBy: ConfigurationSortType = .countOfOrders,
+                               showCustomerMadeOnly: Bool = false,
+                               top: Int = 20) -> [PizzaConfiguration] {
         //create a fetch request, telling it about the entity
         let fetchRequest: NSFetchRequest<PizzaConfiguration> = PizzaConfiguration.fetchRequest()
         
@@ -77,6 +79,10 @@ class Repository {
         case .lastOrderTime:
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lastOrderTime", ascending: false)]
 
+        }
+        
+        if showCustomerMadeOnly {
+            fetchRequest.predicate = NSPredicate(format: "isCustomerMade == YES")
         }
         
         
@@ -166,7 +172,9 @@ class Repository {
     }
     
     // MARK: Order
-    func saveNewOrder(toppings: [String], isFavorite: Bool? ,  _ count: Int16 = 1) {
+    func saveNewOrder(toppings: [String],
+                      isCustomerMade: Bool = false,
+                      isFavorite: Bool? ,  _ count: Int16 = 1) {
         
         let toppingsName = makeConfigurationNameFrom(toppings: toppings)
         
@@ -179,6 +187,7 @@ class Repository {
             print("new cfg, save new cfg first")
             
             configuration = saveNewConfiguration(toppings: toppingsName)
+            configuration?.isCustomerMade = isCustomerMade
         }
         
         guard let cfgInDb = configuration else {fatalError()}
@@ -188,6 +197,8 @@ class Repository {
         if let isFavorite = isFavorite {
             cfgInDb.isFavorite = isFavorite
         }
+        
+        
         
         
         let entity = NSEntityDescription.entity(forEntityName: "OrderHistory", in: getContext())

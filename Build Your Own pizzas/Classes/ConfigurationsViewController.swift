@@ -46,10 +46,13 @@ class ConfigurationsViewController: UITableViewController {
     }
     
     func reloadData() {
-        let sortByType:ConfigurationSortType = [.countOfOrders, .lastOrderTime][sortTypeSwitcher.selectedSegmentIndex]
+        
         let count = UserDefaults.standard.integer(forKey: AppConstants.KeyForMaxNumberOfItemsToDisplay)
         
-        items = Repository.sharedInstance.getAllConfigurations(sortBy: sortByType, top: count)
+        items = Repository.sharedInstance.getAllConfigurations(
+            showCustomerMadeOnly: self.sortTypeSwitcher.selectedSegmentIndex == 1,
+            
+            top: count)
         
         self.tableView.reloadData()
     }
@@ -73,14 +76,17 @@ class ConfigurationsViewController: UITableViewController {
 
         let item = items[indexPath.row]
         
+        if item.isFavorite {
+            cell.imageView?.image = UIImage(named: "heart" )
+        }else{
+            cell.imageView?.image = UIImage(named: "blank")
+        }
+        
+        
         cell.textLabel?.text = item.toppings
         cell.textLabel?.numberOfLines = 0
+        cell.detailTextLabel?.text = String(item.countOfOrders)
         
-        if sortTypeSwitcher.selectedSegmentIndex == 0 {
-            cell.detailTextLabel?.text = String(item.countOfOrders)
-        }else{
-            cell.detailTextLabel?.text = "" //dateFormatter.string(from: item.lastOrderTime as? Date ?? Date.distantPast )
-        }
         return cell
     }
   
