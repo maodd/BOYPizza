@@ -55,7 +55,19 @@ ToppingsViewControllerDelegate
         
         self.configuration =  Repository.sharedInstance.findConigurationByToppings(toppings: items)
         
-        self.isFavorite = (self.configuration?.isFavorite)!
+        
+        
+        
+        if let configuration = self.configuration {
+
+            
+            self.isFavorite = configuration.isFavorite
+            
+        }else{
+            self.isFavorite = false
+        }
+        
+        
         
         tableView.reloadData()
         
@@ -97,7 +109,7 @@ ToppingsViewControllerDelegate
     @IBAction func onPlaceOrder(_ sender: Any) {
         
         let count = Int16(itemNumberLabel.text!)
-        Repository.sharedInstance.saveNewOrder(toppings: self.items, count!)
+        Repository.sharedInstance.saveNewOrder(toppings: self.items, isFavorite: self.isFavorite,  count!)
         
         let ac = UIAlertController(title: "Success",
                           message: "Order placed successfully",

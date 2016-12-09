@@ -235,7 +235,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <segments>
                         <segment title="Most Popular"/>
-                        <segment title="Recent Orders"/>
+                        <segment title="Recent Ordered"/>
                     </segments>
                     <color key="tintColor" red="0.81568627449999997" green="0.41960784309999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>

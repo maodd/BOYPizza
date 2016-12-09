@@ -166,7 +166,7 @@ class Repository {
     }
     
     // MARK: Order
-    func saveNewOrder(toppings: [String], _ count: Int16 = 1) {
+    func saveNewOrder(toppings: [String], isFavorite: Bool? ,  _ count: Int16 = 1) {
         
         let toppingsName = makeConfigurationNameFrom(toppings: toppings)
         
@@ -185,6 +185,10 @@ class Repository {
         
         cfgInDb.countOfOrders += count
         cfgInDb.lastOrderTime = NSDate()
+        if let isFavorite = isFavorite {
+            cfgInDb.isFavorite = isFavorite
+        }
+        
         
         let entity = NSEntityDescription.entity(forEntityName: "OrderHistory", in: getContext())
         let item = NSManagedObject(entity: entity!, insertInto: getContext()) as! OrderHistory
