@@ -1,15 +1,15 @@
 //
-//  Build_Your_Own_pizzasTests.swift
-//  Build Your Own pizzasTests
+//  BYOPizzaTests.swift
+//  BYOPizzaTests
 //
 //  Created by Frank Mao on 2016-12-09.
 //  Copyright © 2016 mazoic. All rights reserved.
 //
 
 import XCTest
-@testable import Build_Your_Own_pizzas
 
-class Build_Your_Own_pizzasTests: XCTestCase {
+
+class BYOPizzaTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

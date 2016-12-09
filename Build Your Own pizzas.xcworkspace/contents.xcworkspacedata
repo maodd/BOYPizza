@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:"
+      name = "Model">
+      <FileRef
+         location = "group:Build Your Own pizzas/Model/ToppingConfRef+CoreDataClass.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Build Your Own pizzas/Model/ToppingConfRef+CoreDataProperties.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Build Your Own pizzas/Model/OrderHistory+CoreDataClass.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Build Your Own pizzas/Model/OrderHistory+CoreDataProperties.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Build Your Own pizzas/Model/Topping+CoreDataClass.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Build Your Own pizzas/Model/Topping+CoreDataProperties.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Build Your Own pizzas/Model/PizzaConfiguration+CoreDataClass.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Build Your Own pizzas/Model/PizzaConfiguration+CoreDataProperties.swift">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Build Your Own pizzas.xcodeproj">
    </FileRef>

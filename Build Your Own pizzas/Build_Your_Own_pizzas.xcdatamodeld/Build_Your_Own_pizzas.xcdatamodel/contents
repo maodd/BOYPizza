@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="OrderHistory" representedClassName="OrderHistory" syncable="YES" codeGenerationType="class">
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="configuration" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PizzaConfiguration" syncable="YES"/>
+        <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="OrderHistory"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="PizzaConfiguration" representedClassName="PizzaConfiguration" syncable="YES" codeGenerationType="class">
+        <attribute name="isCustomerMade" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toppings" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Topping" representedClassName="Topping" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ToppingConfRef" representedClassName="ToppingConfRef" syncable="YES" codeGenerationType="class">
+        <relationship name="pizzaConfiguration" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PizzaConfiguration" syncable="YES"/>
+        <relationship name="topping" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Topping" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Topping" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="PizzaConfiguration" positionX="-54" positionY="0" width="128" height="105"/>
+        <element name="OrderHistory" positionX="-36" positionY="18" width="128" height="104"/>
+        <element name="ToppingConfRef" positionX="-18" positionY="54" width="128" height="75"/>
+    </elements>
 </model>

@@ -7,19 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		694FD47C1DFB162400034BCD /* Build_Your_Own_pizzas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 694FD47A1DFB162400034BCD /* Build_Your_Own_pizzas.xcdatamodeld */; };
+		694FD4801DFB16B500034BCD /* ToppingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FD47F1DFB16B500034BCD /* ToppingsViewController.swift */; };
 		696E36871DFB01C90098390C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E36861DFB01C90098390C /* AppDelegate.swift */; };
 		696E36891DFB01C90098390C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E36881DFB01C90098390C /* ViewController.swift */; };
 		696E368C1DFB01C90098390C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 696E368A1DFB01C90098390C /* Main.storyboard */; };
-		696E368F1DFB01C90098390C /* Build_Your_Own_pizzas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 696E368D1DFB01C90098390C /* Build_Your_Own_pizzas.xcdatamodeld */; };
 		696E36911DFB01C90098390C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 696E36901DFB01C90098390C /* Assets.xcassets */; };
 		696E36941DFB01C90098390C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 696E36921DFB01C90098390C /* LaunchScreen.storyboard */; };
-		696E369F1DFB01C90098390C /* Build_Your_Own_pizzasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E369E1DFB01C90098390C /* Build_Your_Own_pizzasTests.swift */; };
-		696E36AB1DFB053A0098390C /* iOS Take Home Assignment.json in Resources */ = {isa = PBXBuildFile; fileRef = 696E36AA1DFB053A0098390C /* iOS Take Home Assignment.json */; };
+		696E36AB1DFB053A0098390C /* sampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 696E36AA1DFB053A0098390C /* sampleData.json */; };
+		696E37001DFB0AEE0098390C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E36FF1DFB0AEE0098390C /* Repository.swift */; };
+		696E37081DFB135C0098390C /* BYOPizzaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E37071DFB135C0098390C /* BYOPizzaTests.swift */; };
+		696E37101DFB13900098390C /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E370F1DFB13900098390C /* RepositoryTests.swift */; };
 		E98088D39A99BB2848C9EA40 /* Pods_Build_Your_Own_pizzas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F52473570D3C08C8B569B0C /* Pods_Build_Your_Own_pizzas.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		696E369B1DFB01C90098390C /* PBXContainerItemProxy */ = {
+		696E370A1DFB135C0098390C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 696E367B1DFB01C90098390C /* Project object */;
 			proxyType = 1;
@@ -31,18 +34,21 @@
 /* Begin PBXFileReference section */
 		441E63AFFCFE38853AE8C92B /* Pods-Build Your Own pizzas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Build Your Own pizzas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Build Your Own pizzas/Pods-Build Your Own pizzas.debug.xcconfig"; sourceTree = "<group>"; };
 		4F52473570D3C08C8B569B0C /* Pods_Build_Your_Own_pizzas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Build_Your_Own_pizzas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		694FD47B1DFB162400034BCD /* Build_Your_Own_pizzas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Build_Your_Own_pizzas.xcdatamodel; sourceTree = "<group>"; };
+		694FD47F1DFB16B500034BCD /* ToppingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToppingsViewController.swift; sourceTree = "<group>"; };
 		696E36831DFB01C90098390C /* BYOPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BYOPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		696E36861DFB01C90098390C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		696E36861DFB01C90098390C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		696E36881DFB01C90098390C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		696E368B1DFB01C90098390C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		696E368E1DFB01C90098390C /* Build_Your_Own_pizzas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Build_Your_Own_pizzas.xcdatamodel; sourceTree = "<group>"; };
-		696E36901DFB01C90098390C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		696E36901DFB01C90098390C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		696E36931DFB01C90098390C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		696E36951DFB01C90098390C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		696E369A1DFB01C90098390C /* Build Your Own pizzasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Build Your Own pizzasTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		696E369E1DFB01C90098390C /* Build_Your_Own_pizzasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Build_Your_Own_pizzasTests.swift; sourceTree = "<group>"; };
-		696E36A01DFB01C90098390C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		696E36AA1DFB053A0098390C /* iOS Take Home Assignment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "iOS Take Home Assignment.json"; sourceTree = "<group>"; };
+		696E36AA1DFB053A0098390C /* sampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleData.json; sourceTree = "<group>"; };
+		696E36FF1DFB0AEE0098390C /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		696E37051DFB135C0098390C /* BYOPizzaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BYOPizzaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		696E37071DFB135C0098390C /* BYOPizzaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BYOPizzaTests.swift; sourceTree = "<group>"; };
+		696E37091DFB135C0098390C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		696E370F1DFB13900098390C /* RepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		8C34B9C78ED1CBAD12B119C1 /* Pods-Build Your Own pizzas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Build Your Own pizzas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Build Your Own pizzas/Pods-Build Your Own pizzas.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,7 +61,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		696E36971DFB01C90098390C /* Frameworks */ = {
+		696E37021DFB135C0098390C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -86,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				696E36851DFB01C90098390C /* Build Your Own pizzas */,
-				696E369D1DFB01C90098390C /* Build Your Own pizzasTests */,
+				696E37061DFB135C0098390C /* BYOPizzaTests */,
 				696E36841DFB01C90098390C /* Products */,
 				5C4A1BB3687BCBE3A55215F6 /* Pods */,
 				0A1B291780F4E9F003B07B92 /* Frameworks */,
@@ -97,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				696E36831DFB01C90098390C /* BYOPizza.app */,
-				696E369A1DFB01C90098390C /* Build Your Own pizzasTests.xctest */,
+				696E37051DFB135C0098390C /* BYOPizzaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,33 +111,44 @@
 		696E36851DFB01C90098390C /* Build Your Own pizzas */ = {
 			isa = PBXGroup;
 			children = (
-				696E36861DFB01C90098390C /* AppDelegate.swift */,
 				696E36881DFB01C90098390C /* ViewController.swift */,
-				696E368A1DFB01C90098390C /* Main.storyboard */,
-				696E36901DFB01C90098390C /* Assets.xcassets */,
-				696E36921DFB01C90098390C /* LaunchScreen.storyboard */,
 				696E36951DFB01C90098390C /* Info.plist */,
-				696E368D1DFB01C90098390C /* Build_Your_Own_pizzas.xcdatamodeld */,
+				696E36FE1DFB0AD10098390C /* Classes */,
 				696E36A91DFB05340098390C /* Resources */,
 			);
 			path = "Build Your Own pizzas";
 			sourceTree = "<group>";
 		};
-		696E369D1DFB01C90098390C /* Build Your Own pizzasTests */ = {
-			isa = PBXGroup;
-			children = (
-				696E369E1DFB01C90098390C /* Build_Your_Own_pizzasTests.swift */,
-				696E36A01DFB01C90098390C /* Info.plist */,
-			);
-			path = "Build Your Own pizzasTests";
-			sourceTree = "<group>";
-		};
 		696E36A91DFB05340098390C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				696E36AA1DFB053A0098390C /* iOS Take Home Assignment.json */,
+				694FD47A1DFB162400034BCD /* Build_Your_Own_pizzas.xcdatamodeld */,
+				696E368A1DFB01C90098390C /* Main.storyboard */,
+				696E36901DFB01C90098390C /* Assets.xcassets */,
+				696E36921DFB01C90098390C /* LaunchScreen.storyboard */,
+				696E36AA1DFB053A0098390C /* sampleData.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		696E36FE1DFB0AD10098390C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				696E36861DFB01C90098390C /* AppDelegate.swift */,
+				696E36FF1DFB0AEE0098390C /* Repository.swift */,
+				694FD47F1DFB16B500034BCD /* ToppingsViewController.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		696E37061DFB135C0098390C /* BYOPizzaTests */ = {
+			isa = PBXGroup;
+			children = (
+				696E370F1DFB13900098390C /* RepositoryTests.swift */,
+				696E37071DFB135C0098390C /* BYOPizzaTests.swift */,
+				696E37091DFB135C0098390C /* Info.plist */,
+			);
+			path = BYOPizzaTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,22 +174,22 @@
 			productReference = 696E36831DFB01C90098390C /* BYOPizza.app */;
 			productType = "com.apple.product-type.application";
 		};
-		696E36991DFB01C90098390C /* Build Your Own pizzasTests */ = {
+		696E37041DFB135C0098390C /* BYOPizzaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 696E36A61DFB01C90098390C /* Build configuration list for PBXNativeTarget "Build Your Own pizzasTests" */;
+			buildConfigurationList = 696E370C1DFB135C0098390C /* Build configuration list for PBXNativeTarget "BYOPizzaTests" */;
 			buildPhases = (
-				696E36961DFB01C90098390C /* Sources */,
-				696E36971DFB01C90098390C /* Frameworks */,
-				696E36981DFB01C90098390C /* Resources */,
+				696E37011DFB135C0098390C /* Sources */,
+				696E37021DFB135C0098390C /* Frameworks */,
+				696E37031DFB135C0098390C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				696E369C1DFB01C90098390C /* PBXTargetDependency */,
+				696E370B1DFB135C0098390C /* PBXTargetDependency */,
 			);
-			name = "Build Your Own pizzasTests";
-			productName = "Build Your Own pizzasTests";
-			productReference = 696E369A1DFB01C90098390C /* Build Your Own pizzasTests.xctest */;
+			name = BYOPizzaTests;
+			productName = BYOPizzaTests;
+			productReference = 696E37051DFB135C0098390C /* BYOPizzaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -189,7 +206,7 @@
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
 					};
-					696E36991DFB01C90098390C = {
+					696E37041DFB135C0098390C = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 696E36821DFB01C90098390C;
@@ -210,7 +227,7 @@
 			projectRoot = "";
 			targets = (
 				696E36821DFB01C90098390C /* Build Your Own pizzas */,
-				696E36991DFB01C90098390C /* Build Your Own pizzasTests */,
+				696E37041DFB135C0098390C /* BYOPizzaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -223,11 +240,11 @@
 				696E36941DFB01C90098390C /* LaunchScreen.storyboard in Resources */,
 				696E36911DFB01C90098390C /* Assets.xcassets in Resources */,
 				696E368C1DFB01C90098390C /* Main.storyboard in Resources */,
-				696E36AB1DFB053A0098390C /* iOS Take Home Assignment.json in Resources */,
+				696E36AB1DFB053A0098390C /* sampleData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		696E36981DFB01C90098390C /* Resources */ = {
+		696E37031DFB135C0098390C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -289,27 +306,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				696E368F1DFB01C90098390C /* Build_Your_Own_pizzas.xcdatamodeld in Sources */,
 				696E36891DFB01C90098390C /* ViewController.swift in Sources */,
+				694FD4801DFB16B500034BCD /* ToppingsViewController.swift in Sources */,
 				696E36871DFB01C90098390C /* AppDelegate.swift in Sources */,
+				696E37001DFB0AEE0098390C /* Repository.swift in Sources */,
+				694FD47C1DFB162400034BCD /* Build_Your_Own_pizzas.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		696E36961DFB01C90098390C /* Sources */ = {
+		696E37011DFB135C0098390C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				696E369F1DFB01C90098390C /* Build_Your_Own_pizzasTests.swift in Sources */,
+				696E37081DFB135C0098390C /* BYOPizzaTests.swift in Sources */,
+				696E37101DFB13900098390C /* RepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		696E369C1DFB01C90098390C /* PBXTargetDependency */ = {
+		696E370B1DFB135C0098390C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 696E36821DFB01C90098390C /* Build Your Own pizzas */;
-			targetProxy = 696E369B1DFB01C90098390C /* PBXContainerItemProxy */;
+			targetProxy = 696E370A1DFB135C0098390C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -320,6 +340,7 @@
 				696E368B1DFB01C90098390C /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		696E36921DFB01C90098390C /* LaunchScreen.storyboard */ = {
@@ -328,6 +349,7 @@
 				696E36931DFB01C90098390C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -452,31 +474,29 @@
 			};
 			name = Release;
 		};
-		696E36A71DFB01C90098390C /* Debug */ = {
+		696E370D1DFB135C0098390C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Build Your Own pizzasTests/Info.plist";
+				INFOPLIST_FILE = BYOPizzaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mazoic.Build-Your-Own-pizzasTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mazoic.BYOPizzaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Build Your Own pizzas.app/Build Your Own pizzas";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BYOPizza.app/BYOPizza";
 			};
 			name = Debug;
 		};
-		696E36A81DFB01C90098390C /* Release */ = {
+		696E370E1DFB135C0098390C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Build Your Own pizzasTests/Info.plist";
+				INFOPLIST_FILE = BYOPizzaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mazoic.Build-Your-Own-pizzasTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mazoic.BYOPizzaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Build Your Own pizzas.app/Build Your Own pizzas";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BYOPizza.app/BYOPizza";
 			};
 			name = Release;
 		};
@@ -501,11 +521,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		696E36A61DFB01C90098390C /* Build configuration list for PBXNativeTarget "Build Your Own pizzasTests" */ = {
+		696E370C1DFB135C0098390C /* Build configuration list for PBXNativeTarget "BYOPizzaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				696E36A71DFB01C90098390C /* Debug */,
-				696E36A81DFB01C90098390C /* Release */,
+				696E370D1DFB135C0098390C /* Debug */,
+				696E370E1DFB135C0098390C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -513,13 +533,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		696E368D1DFB01C90098390C /* Build_Your_Own_pizzas.xcdatamodeld */ = {
+		694FD47A1DFB162400034BCD /* Build_Your_Own_pizzas.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				696E368E1DFB01C90098390C /* Build_Your_Own_pizzas.xcdatamodel */,
+				694FD47B1DFB162400034BCD /* Build_Your_Own_pizzas.xcdatamodel */,
 			);
-			currentVersion = 696E368E1DFB01C90098390C /* Build_Your_Own_pizzas.xcdatamodel */;
-			path = Build_Your_Own_pizzas.xcdatamodeld;
+			currentVersion = 694FD47B1DFB162400034BCD /* Build_Your_Own_pizzas.xcdatamodel */;
+			name = Build_Your_Own_pizzas.xcdatamodeld;
+			path = ../Build_Your_Own_pizzas.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
