@@ -1,0 +1,6 @@
+framework module Pods_Build_Your_Own_pizzas {
+  umbrella header "Pods-Build Your Own pizzas-umbrella.h"
+
+  export *
+  module * { export * }
+}
